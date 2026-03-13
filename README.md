@@ -5,7 +5,7 @@ Digger's Grave 14 is a build of SS14, intended to recreate the universe of Grave
 
 Any code here (besides the one owned by WizDen and Einstein Engines) is mostly licensed under APGL. If not, it's then denoted with the comment at the top of the file.
 
-Sprite assets that belongs to the Digger's Grave shall not be used anywhere else, unless the build owner or the persons authorized by him didn't say othervise. However, the build may use the sprite assets from other builds on a permament or temporary basis. The owner of the build where the sprite comes from has the right to request the deletion of it if needed.
+Sprite assets that belongs to the Digger's Grave shall not be used anywhere else, unless the build owner or the persons authorized by him didn't say othervise. However, the build may use the sprite assets from other builds on a permament or temporary basis. It can be removed if requested by the asset owner or it's creator.
 
 This is a non-commercial build. However, you can donate to the build owner as support.
 
