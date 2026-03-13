@@ -1,7 +1,7 @@
 # Digger's Grave 14
 
 ---
-Digger's Grave 14 is a build of SS14, intended to recreate the universe of Grave/Digger created by Archeximus as a immersing role-playing server with a bit more serious tone than other servers.
+Digger's Grave 14 is a build of SS14, intended to recreate the universe of Grave/Digger created by Archeximus as a immersing role-playing server with complicated PVP mechanics in tight spaces.
 
 Any code here (besides the one owned by WizDen and Einstein Engines) is mostly licensed under APGL. If not, it's then denoted with the comment at the top of the file.
 
