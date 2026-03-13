@@ -44,10 +44,6 @@ Some scripts provided by Einstein Engines shown below to make the job easier.
 > 4. Run `Scripts/sh/runQuickAll.sh` to launch the client and the server
 > 5. Connect to localhost in the client and play
 
-### MacOS
-
-> I don't know anybody using MacOS to test this, but it's probably roughly the same steps as Linux
-
 ## License
 
 Please read the [LEGAL.md](./LEGAL.md) file for information on the licenses of the code and assets in this repository.
