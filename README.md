@@ -7,6 +7,8 @@ Any code here (besides the one owned by WizDen and Einstein Engines) is mostly l
 
 Sprite assets that belongs to the Digger's Grave shall not be used anywhere else, unless the build owner or the persons authorized by him didn't say othervise. However, the build may use the sprite assets from other builds on a permament or temporary basis. The owner of the build where the sprite comes from has the right to request the deletion of it if needed.
 
+This is a non-commercial build. However, you can donate to the build owner as support.
+
 ## Links
 
 Not added yet.
