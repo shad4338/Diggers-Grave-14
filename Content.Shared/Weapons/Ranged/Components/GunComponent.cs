@@ -311,6 +311,14 @@ public sealed partial class GunComponent : Component
 
     [DataField]
     public float EjectAngleOffset = 3.7f;
+    
+    // DG Start
+    /// <summary>
+    ///     Ergonomics value that affects spread when moving. 1 Ergonomics = 1 degree added to spread.
+    /// </summary>
+    [DataField]
+    public int Ergonomics = 0;
+    // DG End
 }
 
 [Flags]
