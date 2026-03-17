@@ -1,0 +1,49 @@
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DGClothingHeadHelmetBase
+  abstract: true
+  components:
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.83
+      flatReductions:
+        Blunt: 4
+        Slash: 4
+        Piercing: 5
+  - type: HideLayerClothing
+    slots:
+    - HeadTop
+    - HeadSide
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 50 # mind that the incoming damage to the helmet itself is reduced by 50%
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              SheetSteel:
+                min: 1
+                max: 2
+
+- type: entity
+  parent: DGClothingHeadHelmetBase
+  id: DGClothingHeadHelmetBasic
+  name: helmet
+  description: Standard security gear. Protects the head from impacts.
+  components:
+  - type: Sprite
+    sprite: DeltaV/Clothing/Head/Helmets/security.rsi # DeltaV - resprite
+  - type: Clothing
+    sprite: DeltaV/Clothing/Head/Helmets/security.rsi # DeltaV - resprite
