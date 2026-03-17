@@ -178,7 +178,8 @@ public partial class SharedBodySystem
             && TryComp(partEnt.Comp.Body.Value, out InventoryComponent? inventory))
             _inventory.RelayEvent((partEnt.Comp.Body.Value, inventory), ref args);
 
-        if (_prototypeManager.TryIndex<DamageModifierSetPrototype>("PartDamage", out var partModifierSet))
+        var partDamageId = "PartDamage";
+        if (_prototypeManager.TryIndex<DamageModifierSetPrototype>(partDamageId, out var partModifierSet))
             args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, partModifierSet);
 
         args.Damage *= GetPartDamageModifier(partEnt.Comp.PartType);
@@ -217,6 +218,30 @@ public partial class SharedBodySystem
                 var damageResult = _damageable.TryChangeDamage(part.FirstOrDefault().Id, damage * partMultiplier, ignoreResistances, canSever: canSever);
                 if (damageResult != null && damageResult.GetTotal() != 0)
                     landed = true;
+                // DG Start
+                // Damage the equipped helmet if head was hit
+                if (target == TargetBodyPart.Head && damageResult != null && damageResult.GetTotal() > 0)
+                {
+                    if (TryComp<InventoryComponent>(entity, out var inv))
+                    {
+                        if (_inventory.TryGetSlotContainer(entity, "head", out var containerSlot, out _, inv) && containerSlot.ContainedEntity is { } helmet)
+                        {
+                            _damageable.TryChangeDamage(helmet, damage * 0.5f, ignoreResistances, canSever: false);
+                        }
+                    }
+                }
+                // Damage the equipped armor if torso was hit
+                if (target == TargetBodyPart.Torso && damageResult != null && damageResult.GetTotal() > 0)
+                {
+                    if (TryComp<InventoryComponent>(entity, out var inv))
+                    {
+                        if (_inventory.TryGetSlotContainer(entity, "outerClothing", out var containerSlot, out _, inv) && containerSlot.ContainedEntity is { } armor)
+                        {
+                            _damageable.TryChangeDamage(armor, damage * 0.5f, ignoreResistances, canSever: false);
+                        }
+                    }
+                }
+                // DG End
             }
         }
 

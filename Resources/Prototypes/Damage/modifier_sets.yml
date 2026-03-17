@@ -298,6 +298,12 @@
     Radiation: 0.0 # hehe funny cockroach immune to rads
     Caustic: 1.0
 
+# DG: For head piercing vulnerability
+- type: damageModifierSet
+  id: FragileHeadPiercing
+  coefficients:
+    Piercing: 2
+
 # Massive heat damage, presumably to kill with lasers
 - type: damageModifierSet
   id: LivingLight

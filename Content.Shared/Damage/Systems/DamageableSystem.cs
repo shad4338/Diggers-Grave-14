@@ -197,7 +197,7 @@ namespace Content.Shared.Damage
             // Shitmed Change Start
             if (doPartDamage)
             {
-                var partDamage = new TryChangePartDamageEvent(damage, origin, targetPart, ignoreResistances, canSever ?? true, canEvade ?? false, partMultiplier ?? 1.00f);
+                var partDamage = new TryChangePartDamageEvent(damage, origin, targetPart, ignoreResistances, canSever ?? true, canEvade ?? false, partMultiplier ?? 1.00f, false, false, damage);
                 RaiseLocalEvent(uid.Value, ref partDamage);
 
                 if (partDamage.Evaded || partDamage.Cancelled)
@@ -456,7 +456,8 @@ namespace Content.Shared.Damage
         bool CanEvade = false,
         float PartMultiplier = 1.00f,
         bool Evaded = false,
-        bool Cancelled = false);
+        bool Cancelled = false,
+        DamageSpecifier? OriginalDamage = null);
 
     /// <summary>
     ///     Raised on an entity when damage is about to be dealt,
